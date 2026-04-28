@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roopa & Basavaraj | Wedding Invitation</title>
+  <meta name="description" content="A premium South Indian wedding invitation for Roopa and Basavaraj with an animated temple door opening experience." />
+  <meta property="og:title" content="Roopa & Basavaraj | Wedding Invitation" />
+  <meta property="og:description" content="With the blessings of Shri Renuka Yallammadevi & Shri Yalagureshwar." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.8rem);
+      --text-3xl: clamp(2.6rem, 1rem + 4vw, 5.5rem);
+
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+
+      --font-display: 'Playfair Display', serif;
+      --font-script: 'Great Vibes', cursive;
+      --font-body: 'Cormorant Garamond', serif;
+      --font-ui: 'Inter', sans-serif;
+
+      --color-bg: #f8f0e4;
+      --color-surface: #fff9f1;
+      --color-surface-2: #f4e6d3;
+      --color-surface-offset: #ecd7c0;
+      --color-border: rgba(114, 43, 33, 0.18);
+      --color-divider: rgba(114, 43, 33, 0.12);
+      --color-text: #4d1f18;
+      --color-text-muted: #7e4d3f;
+      --color-text-faint: #af8473;
+      --color-primary: #7d1221;
+      --color-primary-hover: #64101b;
+      --color-gold: #c89b3c;
+      --color-gold-deep: #8f6920;
+      --color-cream: #fff7ec;
+      --color-leaf: #61794c;
+      --color-door-dark: #4f2b1f;
+      --color-door-mid: #7a4a31;
+      --color-door-light: #a36a47;
+      --shadow-sm: 0 8px 20px rgba(77, 31, 24, 0.08);
+      --shadow-md: 0 20px 50px rgba(77, 31, 24, 0.14);
+      --shadow-lg: 0 32px 70px rgba(77, 31, 24, 0.18);
+      --radius-sm: 0.5rem;
+      --radius-md: 1rem;
+      --radius-lg: 1.5rem;
+      --radius-xl: 2rem;
+      --transition: 260ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #170d0d;
+      --color-surface: #231515;
+      --color-surface-2: #301d1a;
+      --color-surface-offset: #442821;
+      --color-border: rgba(232, 197, 132, 0.2);
+      --color-divider: rgba(232, 197, 132, 0.12);
+      --color-text: #f7ebdb;
+      --color-text-muted: #d6bda2;
+      --color-text-faint: #a78d79;
+      --color-primary: #ca4557;
+      --color-primary-hover: #da5a6b;
+      --color-gold: #e6bd63;
+      --color-gold-deep: #f1d089;
+      --color-cream: #241714;
+      --color-leaf: #8ba56a;
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.22);
+      --shadow-md: 0 20px 50px rgba(0, 0, 0, 0.28);
+      --shadow-lg: 0 32px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100dvh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.7;
+      color: var(--color-text);
+      background:
+        radial-gradient(circle at top, rgba(200, 155, 60, 0.15), transparent 34%),
+        linear-gradient(180deg, rgba(125, 18, 33, 0.05), transparent 18%),
+        var(--color-bg);
+      overflow-x: hidden;
+    }
+    img, svg { display: block; max-width: 100%; }
+    button, input { font: inherit; }
+    button { cursor: pointer; border: none; }
+    a { color: inherit; }
+    :focus-visible { outline: 2px solid var(--color-gold); outline-offset: 4px; }
+
+    .skip-link {
+      position: absolute; left: 1rem; top: -3rem; z-index: 1000;
+      background: var(--color-primary); color: #fff; padding: 0.75rem 1rem; border-radius: 999px;
+      text-decoration: none; font-family: var(--font-ui);
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .site-shell { position: relative; }
+    .topbar {
+      position: fixed; top: 1rem; right: 1rem; z-index: 30;
+      display: flex; gap: var(--space-3); align-items: center;
+    }
+    .icon-btn {
+      width: 3rem; height: 3rem; border-radius: 999px;
+      background: rgba(255, 249, 241, 0.78);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(12px);
+      color: var(--color-text);
+      display: grid; place-items: center;
+      transition: transform var(--transition), background var(--transition);
+    }
+    .icon-btn:hover { transform: translateY(-2px); background: var(--color-surface); }
+
+    .door-screen {
+      position: fixed; inset: 0; z-index: 25;
+      display: grid; place-items: center;
+      background:
+        radial-gradient(circle at 50% 25%, rgba(255, 222, 173, 0.3), transparent 24%),
+        linear-gradient(180deg, rgba(46, 18, 15, 0.8), rgba(20, 9, 8, 0.95));
+      transition: opacity 1s ease, visibility 1s ease;
+    }
+    .door-screen.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .door-frame {
+      width: min(92vw, 920px);
+      aspect-ratio: 1.2 / 1;
+      padding: clamp(0.75rem, 2vw, 1.5rem);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(180deg, rgba(232, 197, 132, 0.95), rgba(132, 89, 26, 0.92));
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.18), 0 30px 80px rgba(0,0,0,0.38);
+      position: relative;
+      overflow: hidden;
+    }
+    .door-frame::before,
+    .door-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0.75rem;
+      border: 1px solid rgba(255, 241, 213, 0.4);
+      border-radius: calc(var(--radius-xl) - 0.5rem);
+      pointer-events: none;
+    }
+    .lintel {
+      position: absolute; top: 0.6rem; left: 50%; transform: translateX(-50%);
+      width: 74%; height: 2.25rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, rgba(255, 231, 181, 0.8), transparent);
+      filter: blur(3px);
+      opacity: 0.75;
+    }
+    .door-inner {
+      position: relative; height: 100%; border-radius: calc(var(--radius-xl) - 0.4rem);
+      overflow: hidden; background: linear-gradient(180deg, #20100c, #120806);
+      display: grid; place-items: center;
+    }
+    .door-glow {
+      position: absolute; inset: 8%;
+      background: radial-gradient(circle, rgba(255, 223, 150, 0.3), transparent 55%);
+      filter: blur(25px);
+      pointer-events: none;
+    }
+    .door-panels { position: absolute; inset: 0; display: flex; }
+    .door {
+      width: 50%; height: 100%; position: relative;
+      background:
+        linear-gradient(180deg, var(--color-door-light), var(--color-door-mid) 48%, var(--color-door-dark));
+      border-inline: 2px solid rgba(37, 13, 9, 0.42);
+      transition: transform 1.9s cubic-bezier(0.22, 1, 0.36, 1), filter 1.4s ease;
+      transform-origin: center;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 1px rgba(255, 235, 201, 0.08), inset 0 0 35px rgba(0,0,0,0.18);
+    }
+    .door::before,
+    .door::after {
+      content: '';
+      position: absolute; inset: 6% 10%;
+      border: 1px solid rgba(255, 235, 201, 0.18);
+      border-radius: 1.4rem;
+    }
+    .door::after {
+      inset: 18% 18%;
+      border-radius: 999px 999px 1.2rem 1.2rem;
+    }
+    .door-grain {
+      position: absolute; inset: 0;
+      background:
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 16px),
+        repeating-linear-gradient(180deg, rgba(56,22,15,0.22) 0 5px, transparent 5px 20px);
+      mix-blend-mode: soft-light;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .door-handle {
+      position: absolute; top: 50%; width: 1rem; height: 1rem; border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #fff0c7, var(--color-gold) 35%, var(--color-gold-deep) 72%);
+      box-shadow: 0 0 12px rgba(255, 220, 149, 0.35);
+      transform: translateY(-50%);
+    }
+    .door.left .door-handle { right: 1.2rem; }
+    .door.right .door-handle { left: 1.2rem; }
+    .door-label {
+      position: relative; z-index: 2; text-align: center; padding: 0 var(--space-8);
+      color: #fff7eb;
+      max-width: 36rem;
+    }
+    .door-label h1 {
+      font-family: var(--font-script); font-size: clamp(3rem, 5vw, 5.4rem); font-weight: 400;
+      color: #ffe0ae; margin-bottom: var(--space-3); text-shadow: 0 4px 18px rgba(0,0,0,0.28);
+    }
+    .door-label p {
+      font-size: var(--text-lg); line-height: 1.45; margin-inline: auto;
+    }
+    .door-hint {
+      margin-top: var(--space-8);
+      display: inline-flex; gap: var(--space-3); align-items: center; justify-content: center;
+      padding: 0.9rem 1.25rem; border-radius: 999px;
+      background: rgba(255, 248, 234, 0.14); border: 1px solid rgba(255, 237, 207, 0.25);
+      font-family: var(--font-ui); font-size: var(--text-sm); letter-spacing: 0.04em;
+    }
+    .door-screen.opened .door.left { transform: translateX(-104%) rotateY(-45deg); filter: brightness(0.9); }
+    .door-screen.opened .door.right { transform: translateX(104%) rotateY(45deg); filter: brightness(0.9); }
+    .door-screen.opened .door-label { opacity: 0; transform: translateY(-10px); transition: 0.5s ease; }
+
+    .main-content { opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
+    .main-content.revealed { opacity: 1; transform: translateY(0); }
+
+    .hero {
+      min-height: 100dvh;
+      display: grid; place-items: center;
+      padding: clamp(var(--space-16), 8vw, var(--space-24)) var(--space-4) var(--space-12);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at top center, rgba(200, 155, 60, 0.18), transparent 25%),
+        linear-gradient(180deg, rgba(255,255,255,0.26), transparent 30%);
+      pointer-events: none;
+    }
+    .petals, .petals::before, .petals::after {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(125,18,33,0.18) 0 0.35rem, transparent 0.37rem),
+        radial-gradient(circle at 70% 30%, rgba(200,155,60,0.22) 0 0.28rem, transparent 0.3rem),
+        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.35) 0 0.24rem, transparent 0.26rem);
+      animation: petals-float 18s linear infinite;
+      opacity: 0.75;
+    }
+    .petals::before, .petals::after { content: ''; }
+    .petals::before { animation-duration: 24s; transform: translateY(-20%); }
+    .petals::after { animation-duration: 28s; transform: translateY(-35%); opacity: 0.5; }
+
+    .hero-card {
+      width: min(1100px, 100%);
+      position: relative; z-index: 1;
+      display: grid; gap: var(--space-8);
+      grid-template-columns: 1.05fr 0.95fr;
+      background: linear-gradient(180deg, rgba(255, 249, 241, 0.88), rgba(255, 246, 236, 0.72));
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-lg);
+      border-radius: clamp(1.5rem, 3vw, 2.5rem);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+    .hero-copy { padding: clamp(var(--space-8), 5vw, var(--space-16)); position: relative; }
+    .eyebrow {
+      font-family: var(--font-ui); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.2em;
+      color: var(--color-primary); margin-bottom: var(--space-4);
+    }
+    .blessing {
+      font-family: var(--font-display); font-size: var(--text-lg); color: var(--color-gold-deep);
+      margin-bottom: var(--space-4);
+    }
+    .hero-copy h2 {
+      font-family: var(--font-script); font-size: clamp(3rem, 6vw, 5.8rem);
+      line-height: 0.95; font-weight: 400; margin-bottom: var(--space-4);
+      color: var(--color-primary);
+    }
+    .hero-copy h3 {
+      font-family: var(--font-display); font-size: var(--text-xl); margin-bottom: var(--space-4);
+    }
+    .hero-copy p { max-width: 34rem; color: var(--color-text-muted); }
+    .hero-actions {
+      margin-top: var(--space-8); display: flex; flex-wrap: wrap; gap: var(--space-3);
+    }
+    .btn {
+      min-height: 44px; padding: 0.9rem 1.2rem; border-radius: 999px;
+      font-family: var(--font-ui); font-size: var(--text-sm); letter-spacing: 0.03em;
+      text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      transition: transform var(--transition), background var(--transition), color var(--transition);
+    }
+    .btn-primary { background: var(--color-primary); color: #fffaf2; box-shadow: var(--shadow-sm); }
+    .btn-primary:hover { background: var(--color-primary-hover); transform: translateY(-2px); }
+    .btn-secondary { background: transparent; border: 1px solid var(--color-border); color: var(--color-text); }
+    .btn-secondary:hover { background: var(--color-surface); transform: translateY(-2px); }
+
+    .hero-visual {
+      position: relative; min-height: 420px;
+      background:
+        linear-gradient(180deg, rgba(125,18,33,0.08), rgba(200,155,60,0.14)),
+        radial-gradient(circle at top, rgba(255,248,233,0.9), transparent 45%),
+        var(--color-surface-2);
+      padding: clamp(var(--space-6), 4vw, var(--space-12));
+      display: grid; place-items: center;
+      border-left: 1px solid var(--color-divider);
+    }
+    .slideshow {
+      width: min(100%, 450px); aspect-ratio: 0.88 / 1;
+      position: relative; border-radius: 2rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.15));
+      border: 1px solid rgba(255,255,255,0.45);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .slide {
+      position: absolute; inset: 0; opacity: 0; transform: scale(1.06);
+      transition: opacity 1s ease, transform 5s ease;
+      background-size: cover; background-position: center;
+    }
+    .slide.active { opacity: 1; transform: scale(1); }
+    .slide::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(61,20,14,0.28) 100%);
+    }
+    .slide-content {
+      position: absolute; left: 1.2rem; right: 1.2rem; bottom: 1.2rem; z-index: 2;
+      background: rgba(255, 249, 241, 0.78); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.5); border-radius: 1.25rem;
+      padding: 1rem 1.15rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .slide-content span { font-family: var(--font-ui); font-size: var(--text-xs); letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-primary); }
+    .slide-content strong { display: block; font-family: var(--font-display); font-size: var(--text-lg); margin-top: 0.35rem; }
+
+    .garland {
+      position: absolute; top: 0; left: 0; width: 100%; height: 80px; pointer-events: none;
+      background-image:
+        radial-gradient(circle at 5% 0, rgba(97,121,76,0.9) 0 11px, transparent 12px),
+        radial-gradient(circle at 15% 100%, rgba(255,199,87,0.95) 0 14px, transparent 15px),
+        radial-gradient(circle at 25% 0, rgba(125,18,33,0.78) 0 10px, transparent 11px),
+        radial-gradient(circle at 35% 100%, rgba(255,245,236,0.95) 0 14px, transparent 15px),
+        radial-gradient(circle at 45% 0, rgba(97,121,76,0.9) 0 11px, transparent 12px),
+        radial-gradient(circle at 55% 100%, rgba(255,199,87,0.95) 0 14px, transparent 15px),
+        radial-gradient(circle at 65% 0, rgba(125,18,33,0.78) 0 10px, transparent 11px),
+        radial-gradient(circle at 75% 100%, rgba(255,245,236,0.95) 0 14px, transparent 15px),
+        radial-gradient(circle at 85% 0, rgba(97,121,76,0.9) 0 11px, transparent 12px),
+        radial-gradient(circle at 95% 100%, rgba(255,199,87,0.95) 0 14px, transparent 15px);
+      opacity: 0.78;
+      filter: drop-shadow(0 10px 12px rgba(0,0,0,0.1));
+    }
+
+    .section {
+      width: min(1100px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: clamp(var(--space-12), 8vw, var(--space-20)) 0;
+      content-visibility: auto;
+    }
+    .section-heading {
+      text-align: center; max-width: 44rem; margin: 0 auto var(--space-8);
+    }
+    .section-heading .mini {
+      font-family: var(--font-ui); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.18em; color: var(--color-primary);
+      margin-bottom: var(--space-3);
+    }
+    .section-heading h2 { font-family: var(--font-display); font-size: var(--text-2xl); margin-bottom: var(--space-3); }
+    .section-heading p { color: var(--color-text-muted); }
+
+    .ornament {
+      display: flex; align-items: center; justify-content: center; gap: 1rem;
+      color: var(--color-gold-deep); margin: 0 auto var(--space-8); width: min(320px, 100%);
+    }
+    .ornament::before, .ornament::after {
+      content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+    }
+    .ornament span { font-size: 1.35rem; }
+
+    .invitation-card, .story-card, .date-card, .footer-card, .upload-card {
+      background: linear-gradient(180deg, rgba(255,249,241,0.92), rgba(255,245,236,0.76));
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+    .invitation-card::before, .story-card::before, .date-card::before, .footer-card::before, .upload-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(200,155,60,0.08), transparent 30%, rgba(125,18,33,0.04));
+      pointer-events: none;
+    }
+
+    .invitation-card { padding: clamp(var(--space-8), 5vw, var(--space-12)); }
+    .names {
+      text-align: center; margin-bottom: var(--space-8);
+    }
+    .names .label { font-family: var(--font-ui); text-transform: uppercase; letter-spacing: 0.22em; color: var(--color-primary); font-size: var(--text-xs); }
+    .names h3 { font-family: var(--font-script); font-size: clamp(3rem, 7vw, 5.4rem); line-height: 1; font-weight: 400; color: var(--color-primary); margin: 0.3em 0 0.15em; }
+    .names .with { font-family: var(--font-display); font-size: var(--text-lg); color: var(--color-gold-deep); }
+
+    .details-grid {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5);
+    }
+    .detail {
+      padding: 1.1rem 1.2rem; border-radius: 1.2rem;
+      background: rgba(255,255,255,0.4); border: 1px solid rgba(114, 43, 33, 0.08);
+    }
+    .detail small {
+      display: block; font-family: var(--font-ui); font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary);
+      margin-bottom: 0.45rem;
+    }
+    .detail strong { display: block; font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: 0.15rem; }
+
+    .story-card {
+      display: grid; grid-template-columns: 0.95fr 1.05fr; gap: var(--space-6);
+      padding: clamp(var(--space-6), 4vw, var(--space-10));
+      align-items: center;
+    }
+    .story-visual {
+      min-height: 280px; border-radius: 1.75rem; position: relative; overflow: hidden;
+      background:
+        radial-gradient(circle at top, rgba(255, 226, 177, 0.38), transparent 35%),
+        linear-gradient(180deg, rgba(125,18,33,0.08), rgba(200,155,60,0.12)),
+        var(--color-surface-2);
+      display: grid; place-items: center;
+    }
+    .temple-silhouette {
+      width: min(220px, 70%); height: 180px; position: relative;
+      filter: drop-shadow(0 14px 20px rgba(77,31,24,0.12));
+    }
+    .temple-silhouette::before,
+    .temple-silhouette::after {
+      content: ''; position: absolute; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(180deg, var(--color-gold), var(--color-gold-deep));
+      border-radius: 0.6rem 0.6rem 0.3rem 0.3rem;
+    }
+    .temple-silhouette::before { width: 58%; height: 100%; bottom: 0; clip-path: polygon(0 100%, 0 35%, 22% 35%, 22% 22%, 34% 22%, 34% 12%, 48% 12%, 48% 0, 52% 0, 52% 12%, 66% 12%, 66% 22%, 78% 22%, 78% 35%, 100% 35%, 100% 100%); }
+    .temple-silhouette::after { width: 90%; height: 18%; bottom: -0.5rem; border-radius: 1rem; }
+    .story-copy h3 { font-family: var(--font-display); font-size: var(--text-xl); margin-bottom: var(--space-3); }
+    .story-copy p + p { margin-top: var(--space-3); }
+
+    .save-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6);
+      align-items: stretch;
+    }
+    .date-card, .upload-card { padding: clamp(var(--space-6), 4vw, var(--space-10)); }
+    .save-date {
+      font-family: var(--font-script); font-size: clamp(2.8rem, 6vw, 4.8rem);
+      color: var(--color-primary); line-height: 0.95; margin-bottom: var(--space-4);
+    }
+    .date-chip {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.75rem 1rem; border-radius: 999px;
+      background: rgba(200,155,60,0.16); color: var(--color-gold-deep);
+      font-family: var(--font-ui); font-size: var(--text-sm); letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: var(--space-4);
+    }
+    .countdown {
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-3); margin-top: var(--space-6);
+    }
+    .count-box {
+      text-align: center; padding: 1rem 0.5rem; border-radius: 1rem;
+      background: rgba(255,255,255,0.42); border: 1px solid rgba(114,43,33,0.08);
+    }
+    .count-box strong { display: block; font-family: var(--font-display); font-size: var(--text-xl); }
+    .count-box span { font-family: var(--font-ui); font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); }
+
+    .upload-card h3 { font-family: var(--font-display); font-size: var(--text-xl); margin-bottom: var(--space-3); }
+    .upload-card p { color: var(--color-text-muted); margin-bottom: var(--space-5); }
+    .upload-grid {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4);
+    }
+    .upload-slot {
+      position: relative; border-radius: 1.4rem; min-height: 220px;
+      border: 1px dashed rgba(114,43,33,0.28);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.48), rgba(255,248,237,0.62)),
+        var(--color-surface);
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: var(--space-4);
+    }
+    .upload-slot input {
+      position: absolute; inset: 0; opacity: 0; cursor: pointer;
+    }
+    .upload-slot img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      opacity: 0; transition: opacity var(--transition);
+    }
+    .upload-slot.has-image img { opacity: 1; }
+    .upload-slot.has-image .upload-text {
+      opacity: 0; transform: translateY(10px); pointer-events: none;
+    }
+    .upload-text { transition: opacity var(--transition), transform var(--transition); }
+    .upload-text strong { display: block; font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: 0.25rem; }
+    .upload-text span { font-family: var(--font-ui); font-size: var(--text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); }
+
+    .rangoli-wrap { display: grid; place-items: center; margin-top: var(--space-10); }
+    .rangoli {
+      width: min(360px, 86vw); aspect-ratio: 1;
+      border-radius: 50%; position: relative;
+      background:
+        radial-gradient(circle, rgba(255,255,255,0.55) 0 12%, transparent 13%),
+        repeating-conic-gradient(from 0deg, rgba(200,155,60,0.52) 0 12deg, rgba(125,18,33,0.22) 12deg 24deg, rgba(97,121,76,0.24) 24deg 36deg);
+      box-shadow: inset 0 0 0 10px rgba(255,255,255,0.26), 0 18px 40px rgba(77,31,24,0.12);
+      animation: rotate-rangoli 26s linear infinite;
+    }
+    .rangoli::before, .rangoli::after {
+      content: ''; position: absolute; inset: 12%; border-radius: 50%;
+      border: 1px dashed rgba(255, 247, 236, 0.72);
+    }
+    .rangoli::after { inset: 26%; }
+
+    .diyas {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6);
+      width: min(460px, 100%); margin-top: var(--space-6);
+    }
+    .diya {
+      justify-self: center; width: 72px; height: 72px; position: relative;
+    }
+    .diya::before {
+      content: ''; position: absolute; left: 50%; top: 8px; transform: translateX(-50%);
+      width: 20px; height: 28px;
+      background: radial-gradient(circle at 50% 80%, rgba(255,190,69,0.95), rgba(255,119,44,0.9) 62%, transparent 63%);
+      filter: blur(0.2px); animation: flame 1.8s ease-in-out infinite;
+    }
+    .diya::after {
+      content: ''; position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%);
+      width: 58px; height: 26px; border-radius: 0 0 42px 42px;
+      background: linear-gradient(180deg, #b96422, #7f3518);
+      box-shadow: 0 0 22px rgba(255,191,87,0.22);
+    }
+
+    .footer-card {
+      text-align: center; padding: clamp(var(--space-8), 5vw, var(--space-12)); margin-bottom: var(--space-12);
+    }
+    .footer-card h2 { font-family: var(--font-script); font-size: clamp(2.8rem, 6vw, 4.8rem); color: var(--color-primary); font-weight: 400; }
+    .footer-card p { color: var(--color-text-muted); max-width: 36rem; margin: var(--space-4) auto 0; }
+
+    .reveal {
+      opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @keyframes petals-float {
+      0% { transform: translateY(-12%) translateX(0); }
+      100% { transform: translateY(18%) translateX(-2%); }
+    }
+    @keyframes rotate-rangoli { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes flame {
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.9; }
+      50% { transform: translateX(-50%) scale(1.08) translateY(-2px); opacity: 1; }
+    }
+
+    @media (max-width: 900px) {
+      .hero-card,
+      .story-card,
+      .save-grid { grid-template-columns: 1fr; }
+      .hero-visual { border-left: none; border-top: 1px solid var(--color-divider); min-height: 360px; }
+      .details-grid,
+      .upload-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .topbar { top: 0.8rem; right: 0.8rem; gap: 0.5rem; }
+      .icon-btn { width: 2.75rem; height: 2.75rem; }
+      .door-frame { aspect-ratio: 0.82 / 1; }
+      .door-label { padding: 0 var(--space-4); }
+      .door-label p { font-size: var(--text-base); }
+      .hero { padding-inline: 0.75rem; }
+      .section { width: min(100% - 1rem, 1100px); }
+      .hero-copy, .hero-visual, .invitation-card, .story-card, .date-card, .upload-card, .footer-card { padding-inline: 1.1rem; }
+      .countdown { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .diyas { gap: var(--space-3); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="site-shell">
+    <div class="topbar" aria-label="Controls">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+        </svg>
+      </button>
+      <button class="icon-btn" type="button" data-audio-toggle aria-label="Toggle music">
+        <svg data-audio-icon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="door-screen" id="doorScreen">
+      <div class="door-frame">
+        <div class="lintel"></div>
+        <div class="door-inner" role="button" tabindex="0" aria-label="Open wedding invitation">
+          <div class="door-glow"></div>
+          <div class="door-label">
+            <div class="eyebrow">Wedding Invitation</div>
+            <h1>Roopa &amp; Basavaraj</h1>
+            <p>A temple door opens to a new beginning, held in faith, family, and blessings.</p>
+            <div class="door-hint">Tap to open the doors</div>
+          </div>
+          <div class="door-panels" aria-hidden="true">
+            <div class="door left">
+              <div class="door-grain"></div>
+              <div class="door-handle"></div>
+            </div>
+            <div class="door right">
+              <div class="door-grain"></div>
+              <div class="door-handle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main id="main-content" class="main-content">
+      <section class="hero">
+        <div class="petals"></div>
+        <div class="garland"></div>
+        <div class="hero-card reveal visible">
+          <div class="hero-copy">
+            <div class="eyebrow">Traditional Kannada Wedding</div>
+            <p class="blessing">With the blessings of Shri Renuka Yallammadevi &amp; Shri Yalagureshwar</p>
+            <h2>Roopa &amp;<br>Basavaraj</h2>
+            <h3>A sacred beginning shaped by grace and family blessings</h3>
+            <p>At Shri Yallamman Temple, Yallamman Budihal, two families come together to celebrate a wedding rooted in devotion, warmth, and a beautiful lifelong promise.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#invitation">View invitation</a>
+              <a class="btn btn-secondary" href="#gallery-upload">Add your couple photos</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="slideshow" aria-label="Couple gallery preview">
+              <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80');"></div>
+              <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80');"></div>
+              <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80');"></div>
+              <div class="slide-content">
+                <span>Gallery style</span>
+                <strong>Replace these with your own images after upload</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="invitation">
+        <div class="section-heading">
+          <div class="mini">Invitation</div>
+          <h2>The Wedding Details</h2>
+          <p>An elegant presentation with only the details that matter, so everything feels clear, graceful, and easy to read.</p>
+        </div>
+        <div class="ornament"><span>✦</span></div>
+        <article class="invitation-card">
+          <div class="names">
+            <div class="label">Wedding Invitation</div>
+            <h3>Chi. Basavaraj</h3>
+            <div class="with">with</div>
+            <h3>Chi. Sou. Roopa</h3>
+          </div>
+          <div class="details-grid">
+            <div class="detail">
+              <small>Bride</small>
+              <strong>D/o Smt. Kamala &amp; Shri Veerappa S. Jainapur</strong>
+              <div>At: Saroor, Tq: Muddebihal, Dt: Vijayapur</div>
+            </div>
+            <div class="detail">
+              <small>Date &amp; Time</small>
+              <strong>Thursday, 14th May 2026</strong>
+              <div>12:00 PM – 2:00 PM</div>
+            </div>
+            <div class="detail">
+              <small>Venue</small>
+              <strong>Shri Yallamman Temple</strong>
+              <div>Yallamman Budihal, Tq: Nidagundi, Dt: Vijayapur</div>
+            </div>
+            <div class="detail">
+              <small>Blessings</small>
+              <strong>With love from both families</strong>
+              <div>A day made meaningful by elders, faith, and togetherness.</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section reveal" id="story">
+        <div class="section-heading">
+          <div class="mini">Our Story</div>
+          <h2>Small, Sweet, Blessed</h2>
+          <p>Kept intentionally short, warm, and true to your arranged-marriage story.</p>
+        </div>
+        <div class="ornament"><span>❋</span></div>
+        <article class="story-card">
+          <div class="story-visual" aria-hidden="true">
+            <div class="temple-silhouette"></div>
+          </div>
+          <div class="story-copy">
+            <h3>When blessings became the beginning</h3>
+            <p>By the grace of God and the blessings of their parents, Roopa and Basavaraj were brought together in a bond shaped by respect, faith, and family values.</p>
+            <p>What began as a meeting arranged with love soon felt calm and certain, and now they step forward into marriage with gratitude, joy, and the prayers of everyone around them.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="section reveal" id="save-date">
+        <div class="section-heading">
+          <div class="mini">Celebration</div>
+          <h2>Save the Date</h2>
+          <p>A destination-inspired traditional presentation with soft motion, rich textures, and room for your own photos.</p>
+        </div>
+        <div class="ornament"><span>✺</span></div>
+        <div class="save-grid">
+          <article class="date-card">
+            <div class="date-chip">Thursday · 14 May 2026</div>
+            <div class="save-date">Save the Date</div>
+            <p>Join us for a heartfelt temple wedding celebration filled with sacred rituals, floral beauty, and the joy of family gathering as one.</p>
+            <div class="countdown" aria-label="Countdown to wedding">
+              <div class="count-box"><strong data-days>--</strong><span>Days</span></div>
+              <div class="count-box"><strong data-hours>--</strong><span>Hours</span></div>
+              <div class="count-box"><strong data-minutes>--</strong><span>Minutes</span></div>
+              <div class="count-box"><strong data-seconds>--</strong><span>Seconds</span></div>
+            </div>
+          </article>
+          <article class="upload-card" id="gallery-upload">
+            <h3>Image upload spaces</h3>
+            <p>Use these ready-made spaces to add net images or your own couple photos. Once uploaded, they appear instantly inside the website layout.</p>
+            <div class="upload-grid">
+              <label class="upload-slot">
+                <input type="file" accept="image/*" data-upload>
+                <img alt="Uploaded couple portrait preview" loading="lazy" />
+                <div class="upload-text">
+                  <span>Slot 01</span>
+                  <strong>Main portrait</strong>
+                  <div>Tap to upload</div>
+                </div>
+              </label>
+              <label class="upload-slot">
+                <input type="file" accept="image/*" data-upload>
+                <img alt="Uploaded ceremony portrait preview" loading="lazy" />
+                <div class="upload-text">
+                  <span>Slot 02</span>
+                  <strong>Temple moment</strong>
+                  <div>Tap to upload</div>
+                </div>
+              </label>
+            </div>
+          </article>
+        </div>
+        <div class="rangoli-wrap" aria-hidden="true">
+          <div class="rangoli"></div>
+          <div class="diyas">
+            <div class="diya"></div>
+            <div class="diya"></div>
+            <div class="diya"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <article class="footer-card">
+          <div class="eyebrow">With blessings from family</div>
+          <h2>We await your presence</h2>
+          <p>May this occasion be filled with prayer, beauty, laughter, and the warmth of everyone who gathers to bless the couple on their new journey.</p>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8d0f5e6ef.mp3?filename=meditation-bells-11157.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="bellSound" preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_bb6308ecb0.mp3?filename=bell-echo-5952.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const root = document.documentElement;
+    const themeToggle = document.querySelector('[data-theme-toggle]');
+    let currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    root.setAttribute('data-theme', currentTheme);
+
+    function updateThemeIcon() {
+      themeToggle.innerHTML = currentTheme === 'dark'
+        ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>'
+        : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>';
+    }
+    updateThemeIcon();
+    themeToggle.addEventListener('click', () => {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', currentTheme);
+      updateThemeIcon();
+    });
+
+    const doorScreen = document.getElementById('doorScreen');
+    const doorInner = document.querySelector('.door-inner');
+    const mainContent = document.querySelector('.main-content');
+    const bgMusic = document.getElementById('bgMusic');
+    const bellSound = document.getElementById('bellSound');
+    const audioToggle = document.querySelector('[data-audio-toggle]');
+    const audioIcon = document.querySelector('[data-audio-icon]');
+    let audioEnabled = true;
+    let opened = false;
+
+    function setAudioIcon() {
+      audioIcon.innerHTML = audioEnabled
+        ? '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>'
+        : '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line>';
+    }
+    setAudioIcon();
+
+    audioToggle.addEventListener('click', () => {
+      audioEnabled = !audioEnabled;
+      if (!audioEnabled) {
+        bgMusic.pause();
+      } else if (opened) {
+        bgMusic.volume = 0.28;
+        bgMusic.play().catch(() => {});
+      }
+      setAudioIcon();
+    });
+
+    function openDoors() {
+      if (opened) return;
+      opened = true;
+      doorScreen.classList.add('opened');
+      if (audioEnabled) {
+        bellSound.volume = 0.7;
+        bellSound.play().catch(() => {});
+        setTimeout(() => {
+          bgMusic.volume = 0.28;
+          bgMusic.play().catch(() => {});
+        }, 500);
+      }
+      setTimeout(() => {
+        doorScreen.classList.add('hidden');
+        mainContent.classList.add('revealed');
+      }, 1750);
+    }
+
+    doorInner.addEventListener('click', openDoors);
+    doorInner.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openDoors();
+      }
+    });
+
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 3500);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.18 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const targetDate = new Date('2026-05-14T12:00:00');
+    const daysEl = document.querySelector('[data-days]');
+    const hoursEl = document.querySelector('[data-hours]');
+    const minutesEl = document.querySelector('[data-minutes]');
+    const secondsEl = document.querySelector('[data-seconds]');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+      if (diff <= 0) {
+        daysEl.textContent = '00';
+        hoursEl.textContent = '00';
+        minutesEl.textContent = '00';
+        secondsEl.textContent = '00';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      daysEl.textContent = String(days).padStart(2, '0');
+      hoursEl.textContent = String(hours).padStart(2, '0');
+      minutesEl.textContent = String(minutes).padStart(2, '0');
+      secondsEl.textContent = String(seconds).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    document.querySelectorAll('[data-upload]').forEach((input) => {
+      input.addEventListener('change', (event) => {
+        const file = event.target.files?.[0];
+        if (!file) return;
+        const reader = new FileReader();
+        const slot = input.closest('.upload-slot');
+        const img = slot.querySelector('img');
+        reader.onload = (e) => {
+          img.src = e.target.result;
+          slot.classList.add('has-image');
+        };
+        reader.readAsDataURL(file);
+      });
+    });
+  </script>
+</body>
+</html>

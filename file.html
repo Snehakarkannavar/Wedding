@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roopa & Basavaraj | Wedding Invitation</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2c1810 0%, #1a0f0b 100%);
+            overflow-x: hidden;
+            color: #f4e8d1;
+        }
+
+        .container {
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* ===== TEMPLE DOOR (HERO SECTION) ===== */
+        .temple-door {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, #3d2b1f 0%, #1a0f0b 70%);
+            position: relative;
+            cursor: pointer;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .door-frame {
+            width: 400px;
+            height: 550px;
+            border: 25px solid #8B4513;
+            border-radius: 10px;
+            position: relative;
+            box-shadow:
+                0 0 50px rgba(255, 215, 0, 0.3),
+                inset 0 0 50px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(145deg, #654321, #8B4513);
+        }
+
+        .door-left,
+        .door-right {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            background: linear-gradient(145deg, #5D4037, #4E342E);
+            border-right: 5px solid #8B4513;
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .door-right {
+            border-right: none;
+            border-left: 5px solid #8B4513;
+        }
+
+        .door-left.closed {
+            transform-origin: left center;
+        }
+
+        .door-right.closed {
+            transform-origin: right center;
+        }
+
+        .door-left.open {
+            transform: rotateY(-120deg);
+        }
+
+        .door-right.open {
+            transform: rotateY(120deg);
+        }
+
+        .door-handle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #D4AF37;
+            border-radius: 50%;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+        }
+
+        .door-right .door-handle {
+            left: 20px;
+            right: auto;
+        }
+
+        .click-prompt {
+            position: absolute;
+            bottom: 50px;
+            text-align: center;
+            animation: pulse 2s infinite;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+
+        /* ===== MAIN CONTENT (HIDDEN INITIALLY) ===== */
+        .main-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 1s ease;
+        }
+
+        .main-content.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ===== WELCOME SECTION ===== */
+        .welcome-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(220, 20, 60, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, #2c1810 0%, #1a0f0b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: #D4AF37;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+            margin-bottom: 1rem;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        .blessings {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: #f4e8d1;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1s forwards;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(212, 175, 55, 0.8), 0 0 30px rgba(212, 175, 55, 0.6);
+            }
+
+            to {
+                text-shadow: 0 0 30px rgba(212, 175, 55, 1), 0 0 40px rgba(212, 175, 55, 0.8);
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== COUPLE GALLERY ===== */
+        .gallery-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a0f0b 0%, #2c1810 100%);
+            position: relative;
+        }
+
+        .gallery {
+            width: 90%;
+            max-width: 800px;
+            height: 500px;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(212, 175, 0, 0.3);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all 1.5s ease;
+        }
+
+        .gallery img.active {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* ===== INVITATION SECTION ===== */
+        .invitation-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #2c1810 0%, #1a0f0b 100%);
+        }
+
+        .invitation-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #f8f1e9, #e8d5b7);
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            text-align: center;
+            color: #2c1810;
+            position: relative;
+            border: 3px solid #D4AF37;
+        }
+
+        .invitation-card::before {
+            content: '🪔';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            background: #D4AF37;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+        }
+
+        .groom-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3rem, 8vw, 5rem);
+            color: #8B0000;
+            margin-bottom: 1rem;
+        }
+
+        .bride-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3rem, 8vw, 5rem);
+            color: #B22222;
+            margin-bottom: 2rem;
+        }
+
+        .parents {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #4A4A4A;
+        }
+
+        .date-time,
+        .venue {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        /* ===== MUSIC CONTROL ===== */
+        .music-control {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(212, 175, 55, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .music-control:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ===== FLOATING PETALS ===== */
+        .petal {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, #FFD700, #FFA500);
+            border-radius: 50% 0;
+            animation: float 6s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .door-frame {
+                width: 300px;
+                height: 400px;
+            }
+
+            .invitation-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .gallery {
+                height: 400px;
+            }
+        }
+
+        /* ===== SMOOTH SCROLL ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- MUSIC CONTROL -->
+    <button class="music-control" id="musicToggle" title="Toggle Music">🔊</button>
+
+    <!-- TEMPLE DOOR -->
+    <div class="container">
+        <div class="temple-door" id="templeDoor">
+            <div class="door-frame">
+                <div class="door-left closed" id="doorLeft">
+                    <div class="door-handle"></div>
+                </div>
+                <div class="door-right closed" id="doorRight">
+                    <div class="door-handle"></div>
+                </div>
+            </div>
+            <div class="click-prompt">
+                👆 Click to Open the Blessings
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content" id="mainContent">
+            <!-- WELCOME SECTION -->
+            <section class="welcome-section">
+                <h1 class="welcome-title">Roopa weds Basavaraj</h1>
+                <div class="blessings">
+                    With the blessings of Shri Yallamman Devi & Parents
+                </div>
+            </section>
+
+            <!-- GALLERY SECTION -->
+            <section class="gallery-section">
+                <div class="gallery" id="gallery">
+                    <!-- UPLOAD YOUR COUPLE PHOTOS HERE -->
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=500&fit=crop"
+                        alt="Couple 1" class="active">
+                    <img src="https://images.unsplash.com/photo-1575464588155-6d6ab7ba984a?w=800&h=500&fit=crop"
+                        alt="Couple 2">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=500&fit=crop"
+                        alt="Couple 3">
+                    <!-- ADD MORE IMAGES HERE -->
+                </div>
+            </section>
+
+            <!-- INVITATION SECTION -->
+            <section class="invitation-section">
+                <div class="invitation-card">
+                    <div class="groom-name">Chi. Basavaraj</div>
+                    <div style="font-size: 2rem; font-weight: bold; margin: 1rem 0;">with</div>
+                    <div class="bride-name">Chi. Sou. Roopa</div>
+
+                    <div class="parents">
+                        D/o Smt. Kamala & Shri Veerappa S. Jainapur<br>
+                        Saroor, Tq: Muddebihal, Dt: Vijayapur
+                    </div>
+
+                    <div class="date-time">
+                        📅 Thursday, 14th May 2026 | 12:00 PM – 2:00 PM
+                    </div>
+
+                    <div class="venue">
+                        📍 Shri Yallamman Temple<br>
+                        Yallamman Budihal, Tq: Nidagundi, Dt: Vijayapur
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <audio id="doorSound" preload="auto">
+        <source
+            src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp66hVFApGn+DyvmwhBSJ8v+f2QQAoUXrTp

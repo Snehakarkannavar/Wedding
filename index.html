@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basavaraj ❤️ Roopa | Royal Wedding Invitation</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Libraries -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+        :root {
+            --maroon: #6B1020;
+            --maroon-deep: #4A0A15;
+            --gold: #C4913A;
+            --gold-light: #E2B05A;
+            --cream: #FDF6EC;
+            --cream-dark: #F5DFA0;
+            --text: #3A1A10;
+            --white-glass: rgba(255, 255, 255, 0.7);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ===== GLASSMORPHISM UTILS ===== */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85); /* Increased opacity for better visibility */
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(196, 145, 58, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        /* ===== ENTRANCE CURTAIN (GSAP) ===== */
+        #curtain-wrapper {
+            position: fixed;
+            inset: 0;
+            z-index: 5000;
+            display: flex;
+            background: #000;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .curtain-panel {
+            flex: 1;
+            height: 100%;
+            background: var(--maroon);
+            background-image: 
+                linear-gradient(90deg, 
+                    rgba(0,0,0,0.4) 0%, 
+                    rgba(255,255,255,0.05) 10%, 
+                    rgba(0,0,0,0.4) 20%, 
+                    transparent 25%, 
+                    rgba(0,0,0,0.4) 30%, 
+                    rgba(255,255,255,0.05) 40%, 
+                    rgba(0,0,0,0.4) 50%, 
+                    transparent 55%, 
+                    rgba(0,0,0,0.4) 60%, 
+                    rgba(255,255,255,0.05) 70%, 
+                    rgba(0,0,0,0.4) 80%, 
+                    transparent 85%, 
+                    rgba(0,0,0,0.4) 90%, 
+                    rgba(255,255,255,0.05) 100%
+                );
+            background-size: 100px 100%;
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.7);
+            position: relative;
+            z-index: 2; /* Above GIF */
+        }
+        .torana-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 3; /* Topmost */
+            pointer-events: none;
+        }
+        .gif-container {
+            position: absolute;
+            inset: 0;
+            z-index: 1; /* Below curtains */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .gif-container.visible { opacity: 1; }
+        
+        .invite-text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            color: var(--gold-light);
+            text-align: center;
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2.5rem, 10vw, 5rem);
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            opacity: 0;
+            width: 100%;
+            line-height: 1.2;
+        }
+        
+        .curtain-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 4;
+            color: var(--gold-light);
+            width: 100%;
+        }
+        .curtain-content h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3.5rem, 12vw, 7rem);
+            margin-bottom: 1rem;
+        }
+        .curtain-content p {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(rgba(253, 246, 236, 0.7), rgba(253, 246, 236, 0.7)), 
+                        url('WhatsApp Image 2026-04-28 at 1.24.01 PM.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .hero-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(4.5rem, 15vw, 10rem);
+            color: var(--maroon);
+            margin-bottom: 1rem;
+        }
+        .hero-date {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            color: var(--gold);
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 3rem 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .section-title h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--maroon);
+            margin-bottom: 0.5rem;
+        }
+        .section-title .divider {
+            font-size: 1.5rem;
+            color: var(--gold);
+        }
+
+        /* ===== BRIDE & GROOM INTRO ===== */
+        .couple-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .couple-card {
+            padding: 2rem;
+            text-align: center;
+        }
+        .couple-card img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--gold);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .couple-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--maroon);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== TIMELINE ===== */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--gold);
+            top: 0; bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            padding: 2rem;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        .timeline-item.left { left: 0; text-align: right; }
+        .timeline-item.right { left: 50%; text-align: left; }
+        .timeline-content {
+            padding: 1.5rem;
+            border-radius: 15px;
+        }
+        .timeline-content h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--maroon);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== SWIPER GALLERY ===== */
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            overflow: hidden;
+        }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 280px;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 4px solid #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ===== VENUE & RSVP ===== */
+        .venue-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+            color: var(--text); /* Ensure text is visible */
+        }
+        .map-container {
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .rsvp-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 3rem;
+            background: var(--maroon);
+            color: #fff !important; /* Force white text visibility */
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(107, 16, 32, 0.3);
+            font-weight: 700;
+        }
+        .rsvp-btn:hover {
+            background: var(--maroon-deep);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(107, 16, 32, 0.4);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: var(--maroon-deep);
+            color: var(--cream-dark);
+        }
+        footer h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .couple-intro, .venue-wrapper { grid-template-columns: 1fr; }
+            .timeline::after { left: 20px; }
+            .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; text-align: left; }
+            .timeline-item.right { left: 0; }
+            .timeline-item::after { left: 10px; }
+            .section-title h2 { font-size: 2.2rem; }
+            .hero-names { font-size: 4rem; }
+            .swiper-slide { width: 240px; height: 350px; }
+            .section { padding: 4rem 1rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-names { font-size: 3.5rem; }
+            .curtain-content h1 { font-size: 3rem; }
+            .curtain-content p { font-size: 0.9rem; letter-spacing: 3px; }
+            .timeline-content { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CINEMATIC ENTRANCE -->
+    <div id="curtain-wrapper" onclick="openInvitation()">
+        <!-- GIF layer inside wrapper but behind panels -->
+        <div id="gif-container" class="gif-container">
+            <div class="tenor-gif-embed" data-postid="3414548591814340060" data-share-method="host" data-aspect-ratio="0.566265" data-width="100%"><a href="https://tenor.com/view/good-morning-gif-3414548591814340060">Good Morning GIF</a>from <a href="https://tenor.com/search/good+morning-gifs">Good Morning GIFs</a></div>
+            <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        </div>
+        
+        <!-- Animated Text Overlay -->
+        <div id="invite-text" class="invite-text-overlay">
+            You are invited<br>for our wedding
+        </div>
+
+        <div class="torana-top">
+            <svg width="100%" viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M0 20 Q 50 80 100 20 Q 150 80 200 20 Q 250 80 300 20 Q 350 80 400 20 Q 450 80 500 20 Q 550 80 600 20 Q 650 80 700 20 Q 750 80 800 20 Q 850 80 900 20 Q 950 80 1000 20" stroke="#4E6E30" stroke-width="5" fill="none" />
+                <g fill="#F5A623">
+                    <circle cx="50" cy="50" r="15" /> <circle cx="150" cy="50" r="15" />
+                    <circle cx="250" cy="50" r="15" /> <circle cx="350" cy="50" r="15" />
+                    <circle cx="450" cy="50" r="15" /> <circle cx="550" cy="50" r="15" />
+                    <circle cx="650" cy="50" r="15" /> <circle cx="750" cy="50" r="15" />
+                    <circle cx="850" cy="50" r="15" /> <circle cx="950" cy="50" r="15" />
+                </g>
+                <g fill="#fff">
+                    <circle cx="50" cy="50" r="5" /> <circle cx="150" cy="50" r="5" />
+                    <circle cx="250" cy="50" r="5" /> <circle cx="350" cy="50" r="5" />
+                    <circle cx="450" cy="50" r="5" /> <circle cx="550" cy="50" r="5" />
+                    <circle cx="650" cy="50" r="5" /> <circle cx="750" cy="50" r="5" />
+                    <circle cx="850" cy="50" r="5" /> <circle cx="950" cy="50" r="5" />
+                </g>
+            </svg>
+        </div>
+        <div class="curtain-panel left"></div>
+        <div class="curtain-panel right"></div>
+        <div class="curtain-content">
+            <h1>Basavaraj & Roopa</h1>
+            <p>The Royal Union</p>
+            <p style="font-size: 0.8rem; margin-top: 2rem; opacity: 0.8; letter-spacing: 2px;">TAP TO OPEN</p>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="Vachindamma-Vachindamma.mp3">
+    </audio>
+
+    <main id="main-content">
+        <!-- HERO -->
+        <section class="hero">
+            <div data-aos="zoom-out" data-aos-duration="2000">
+                <p class="hero-date">14 . 05 . 2026</p>
+                <h1 class="hero-names">Basavaraj & Roopa</h1>
+                <p class="hero-date">Shri Yallamman Temple, Vijayapur</p>
+            </div>
+        </section>
+
+        <!-- BRIDE & GROOM -->
+        <section class="section">
+            <div class="section-title" data-aos="fade-up">
+                <h2>The Happy Couple</h2>
+                <div class="divider">❦</div>
+            </div>
+            <div class="couple-intro">
+                <div class="couple-card glass-card" data-aos="fade-right">
+                    <img src="WhatsApp Image 2026-04-28 at 1.24.01 PM.jpeg" alt="Groom">
+                    <h3>Chi. Basavaraj</h3>
+                    <p>S/o Shri Ramanna D. Goudar<br>& Smt. Shanta R. Goudar</p>
+                </div>
+                <div class="couple-card glass-card" data-aos="fade-left">
+                    <img src="WhatsApp Image 2026-04-28 at 1.24.39 PM.jpeg" alt="Bride">
+                    <h3>Chi. Sou. Roopa</h3>
+                    <p>D/o Smt. Kamala<br>& Shri Veerappa S. Jainapur</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MOMENTS SLIDER -->
+        <section class="section">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Moments to Cherish</h2>
+                <div class="divider">❀</div>
+            </div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="WhatsApp Image 2026-04-28 at 1.24.01 PM.jpeg" /></div>
+                    <div class="swiper-slide"><img src="WhatsApp Image 2026-04-28 at 1.24.39 PM.jpeg" /></div>
+                    <div class="swiper-slide"><img src="WhatsApp Image 2026-04-28 at 1.25.23 PM.jpeg" /></div>
+                    <div class="swiper-slide"><img src="WhatsApp Image 2026-04-28 at 1.26.05 PM.jpeg" /></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- VENUE & RSVP -->
+        <section class="section">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Join Our Celebration</h2>
+                <div class="divider">📍</div>
+            </div>
+            <div class="venue-wrapper glass-card" style="padding: 2rem;">
+                <div class="venue-info" data-aos="fade-right">
+                    <h3 style="font-family: 'Cinzel', serif; color: var(--maroon); font-size: 2rem;">Shri Yallamman Temple</h3>
+                    <p style="margin: 1rem 0; font-size: 1.2rem;">Yallamman Budihal, Tq: Nidagundi, Dt: Vijayapur</p>
+                    <p>We await your presence to make our special day even more meaningful.</p>
+                    <a href="https://wa.me/910000000000?text=I%20will%20be%20attending%20the%20wedding!" class="rsvp-btn">RSVP ON WHATSAPP</a>
+                </div>
+                <div class="map-container" data-aos="fade-left">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15264.475470514115!2d75.875!3d16.825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDQ5JzMwLjAiTiA3NcKwNTInMzAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <h2>Basavaraj & Roopa</h2>
+            <p style="font-family: 'Cinzel', serif; letter-spacing: 2px;">Thank You For Being A Part Of Our Story</p>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // AOS Init
+        AOS.init({
+            duration: 1200,
+            once: true
+        });
+
+        let isFirstClick = true;
+        let revealTimeout;
+
+        function openInvitation() {
+            if (isFirstClick) {
+                isFirstClick = false;
+                const music = document.getElementById("bgMusic");
+                music.currentTime = 5;
+                music.play().catch(e => console.log("Music failed", e));
+
+                // 1. Show GIF Container
+                document.getElementById("gif-container").classList.add("visible");
+
+                // 2. Open Curtains
+                gsap.to(".curtain-panel.left", { x: "-100%", duration: 2.5, ease: "power4.inOut" });
+                gsap.to(".curtain-panel.right", { x: "100%", duration: 2.5, ease: "power4.inOut" });
+                gsap.to(".torana-top", { y: "-100%", duration: 2, ease: "power4.inOut" });
+                gsap.to(".curtain-content", { opacity: 0, duration: 1 });
+
+                // 3. Show "You are invited" text
+                gsap.to("#invite-text", { opacity: 1, duration: 2, delay: 0.5 });
+
+                // 4. Reveal Invitation after 4 seconds
+                revealTimeout = setTimeout(showMainPage, 4500);
+            } else {
+                // Skip the sequence if clicked again
+                showMainPage();
+            }
+        }
+
+        function showMainPage() {
+            if (revealTimeout) clearTimeout(revealTimeout);
+            
+            // Fade out everything in the curtain wrapper
+            gsap.to("#curtain-wrapper", { opacity: 0, duration: 1, onComplete: () => {
+                document.getElementById("curtain-wrapper").style.display = "none";
+            }});
+            
+            // Show Main Content
+            document.getElementById("main-content").classList.add("visible");
+            gsap.from(".hero-names", { opacity: 0, y: 50, duration: 2, ease: "power3.out" });
+        }
+
+        // Swiper Init
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+
+        // Petal Animation
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.innerHTML = '🌸';
+            petal.style.position = 'fixed';
+            petal.style.top = '-20px';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.fontSize = Math.random() * 10 + 10 + 'px';
+            petal.style.opacity = Math.random();
+            petal.style.zIndex = '1000';
+            petal.style.pointerEvents = 'none';
+            document.body.appendChild(petal);
+
+            gsap.to(petal, {
+                y: "110vh",
+                x: (Math.random() - 0.5) * 200,
+                rotation: Math.random() * 360,
+                duration: Math.random() * 5 + 5,
+                ease: "none",
+                onComplete: () => petal.remove()
+            });
+        }
+        setInterval(createPetal, 400);
+    </script>
+</body>
+</html>
