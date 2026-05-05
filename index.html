@@ -892,7 +892,7 @@
     </div>
 
     <audio id="bgMusic" loop>
-        <source src="Vachindamma-Vachindamma.mp3">
+        <source src="wedding-song.mpeg">
     </audio>
 
     <main id="main-content">
@@ -1118,7 +1118,7 @@
             if (isFirstClick) {
                 isFirstClick = false;
                 const music = document.getElementById("bgMusic");
-                music.currentTime = 5; // Reset to 5 seconds
+                music.currentTime = 10;
                 music.play().catch(e => console.log("Music failed", e));
 
                 // 1. Show GIF Container
